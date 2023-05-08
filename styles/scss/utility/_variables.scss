@@ -1,0 +1,10 @@
+$first-color: #e4a085;
+$second-color: #fcf151;
+$third-color: #773baf;
+$first-text-color: darken(complement($first-color), 20%);
+$second-text-color: darken(complement($second-color), 20%);
+$third-text-color: #444;
+$breakpoints:  (
+    'md': 768px,
+    'lg': 1024px
+);

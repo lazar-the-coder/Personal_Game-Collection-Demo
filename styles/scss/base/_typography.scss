@@ -1,0 +1,38 @@
+@import '../utility/index';
+* { 
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Yeseva One', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: $second-text-color;
+    display: block;
+    padding: auto;
+}
+
+header, footer {
+    overflow: auto;
+    text-align: center;
+    color: $first-text-color;
+    background-color: $first-color;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: 'Nova Oval', cursive;
+}
+
+main {
+    flex-grow: 1;
+    color: $third-text-color;
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+}
