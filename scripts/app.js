@@ -1,6 +1,7 @@
 // Document setup
-gameListHolder = document.getElementById('game-list');
-gamesList = ['Glad Libs', 'Tic-Tac-Toe'];
+const gameListHolder = document.getElementById('game-list');
+const gamesList = ['Glad Libs', 'Wheel of Hanged Men'];
+const mainBody = document.getElementById('body');
 
 gameListHolder.addEventListener("click", (event) => {
     if (event.target.nodeName === "A") {
@@ -17,19 +18,21 @@ function runGames(game) {
         case 'Glad Libs':
             gladLibs();
             break;
-        case 'Tic-Tac-Toe':
+        case 'Wheel of Hanged Men':
+            hangedMen();
             break;
         default:
             break;
     }
 }
 
+// Glad Libs Start
+//Make the form to enter the words.
+
 let story = ''
 
 const wordDic = {}
 
-// Glad Libs Start
-//Make the form to enter the words.
 function gladLibs() {
 
 
@@ -76,7 +79,7 @@ class StoryTemplate {
 function printForm() {
     newStory = new StoryTemplate(story);
     const theStory = newStory.getWords();
-    document.getElementById('body').innerHTML = '<form></form>';
+    mainBody.innerHTML = '<form></form>';
     const form = document.getElementsByTagName('form')[0];
     for (word of theStory[1]) {
         form.innerHTML +=   `<div>
@@ -84,9 +87,9 @@ function printForm() {
                                 <input type="text" name="noun" id="${word}">
                             </div>`
     }
-    form.innerHTML += `<input id="submitter" type="submit" value="Get Glad!"></input>`
+    form.innerHTML += `<input type="submit" value="Get Glad!"></input>`
     form.addEventListener("click", (event) => {
-        if (event.target.getAttribute('id') === 'submitter') {
+        if (event.target.getAttribute('type') === 'submit') {
             submitInfo()
         }
     });
@@ -104,7 +107,7 @@ function submitInfo() {
 
 function printStory() {
     const theStory = newStory.giveStory(wordDic);
-    document.getElementById('body').innerHTML = `<p>${theStory}</p>`;
+    mainBody.innerHTML = `<p>${theStory}</p>`;
 }
 // Glad Libs End
 
