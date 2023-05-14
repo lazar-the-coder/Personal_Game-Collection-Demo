@@ -1,7 +1,21 @@
 {
+	
+	"descriptions": [
+		{
+			"Glad Libs": "You choose a word when prompted, and they will be added into the story.",
+			"Wheel of Hanged Men": "You can either choose to guess a letter or the phrase, fail too many times and you lose."
+		}
+    ],
+	
 	"gladStories": [
-      {"title": "lets", "text": "let's $%Word 1$"},
-	  {"title": "let us", "text": "let us $%Word 1$"}
+		{
+			"title": "lets", 
+			"text": "let's $%Word 1$"
+		},
+		{
+			"title": "let us",
+			"text": "let us $%Word 1$"
+		}
     ],
 	
 	"hangingPhrases": [

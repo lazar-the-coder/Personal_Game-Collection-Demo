@@ -48,7 +48,7 @@ export function selector() {
 	});
 }
 
-export function printForm() {
+function printForm() {
 	mainBody.innerHTML = '<form><div class="form-options"></div></form>';
 	const form = document.getElementsByTagName('form')[0];
 	const formoptions = document.getElementsByClassName('form-options')[0];
