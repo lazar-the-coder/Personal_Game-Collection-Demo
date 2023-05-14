@@ -1,10 +1,17 @@
 @import '../utility/index';
 
-ul {
+ul, .form-options {
     padding: 0;
     margin: 0;
     @include media-query('md') {
         display: flex;
+        justify-content: space-around;
+    }
+}
+
+.form-options {
+    @include media-query('md') {
+        flex-wrap: wrap;
     }
 }
 
@@ -13,7 +20,12 @@ li {
     text-align: center;
     border: 2px $second-color solid;
     @include media-query('md') {
-        justify-content: space-around;
         flex-grow: 1;
+    }
+}
+
+.form-choice {
+    @include media-query('md') {
+        flex: 1;
     }
 }

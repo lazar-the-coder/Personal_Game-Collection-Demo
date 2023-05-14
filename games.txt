@@ -1,4 +1,3 @@
-Glad-Libs: Mad-Libs https://en.wikipedia.org/wiki/Mad_Libs
 Wheel of Hanged Men: https://en.wikipedia.org/wiki/Hangman_(game) https://en.wikipedia.org/wiki/Wheel_of_Fortune_(American_game_show)
 
 Tic-Tac-Toe: https://en.wikipedia.org/wiki/Tic-tac-toe

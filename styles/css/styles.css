@@ -375,14 +375,21 @@ main {
   margin: auto;
 }
 
-ul {
+ul, .form-options {
   padding: 0;
   margin: 0;
 }
 
 @media (min-width: 768px) {
-  ul {
+  ul, .form-options {
     display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-options {
+    flex-wrap: wrap;
   }
 }
 
@@ -394,7 +401,12 @@ li {
 
 @media (min-width: 768px) {
   li {
-    justify-content: space-around;
     flex-grow: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-choice {
+    flex: 1;
   }
 }
