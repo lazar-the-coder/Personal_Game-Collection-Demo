@@ -1,0 +1,11 @@
+{
+	"gladStories": [
+      {"title": "lets", "text": "let's $%Word 1$"},
+	  {"title": "let us", "text": "let us $%Word 1$"}
+    ],
+	
+	"hangingPhrases": [
+		"The One",
+		"The Two"
+    ]
+}
