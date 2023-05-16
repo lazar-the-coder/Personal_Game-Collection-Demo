@@ -14,9 +14,9 @@ class StoryTemplate {
 		this.carved = this.text.split('$');
 		let carvedWords = [];
 		for (let word of this.carved) {
-		if (word.charAt(0) === '%') {
-			carvedWords.push(word);
-		}
+			if (word.charAt(0) === '%') {
+				carvedWords.push(word);
+			}
 		}
 		this.words = [...new Set(carvedWords)];
 	}
@@ -24,16 +24,17 @@ class StoryTemplate {
 	giveStory(dic) {
 		let storyFull = this.carved.join('');
 		for (let word of this.words) {
-		storyFull = storyFull.replaceAll(word, dic[word]);
+			storyFull = storyFull.replaceAll(word, `<span>${dic[word]}</span>`);
 		}
 		return storyFull;
 	}
 }
 
-let newStory
-let wordDic = {}
+let newStory;
+let wordDic = {};
 
 export function selector() {
+	wordDic = {};
 	mainBody.innerHTML = '<div class="story-options"></div>';
 	const storyoptions = document.getElementsByClassName('story-options')[0];
 	for (let i = 0; i < gladStories.length; i++) {
@@ -41,9 +42,9 @@ export function selector() {
 	}
 	storyoptions.addEventListener("click", (event) => {
 		if (event.target.tagName === 'A') {
-			let id = event.target.getAttribute('id').slice(-1)
+			let id = event.target.getAttribute('id').slice(-1);
 			newStory = new StoryTemplate(gladStories[id].text, gladStories[id].title);
-			printForm()
+			printForm();
 		}
 	});
 }
@@ -55,27 +56,28 @@ function printForm() {
 	for (let word of newStory.words) {
 		formoptions.innerHTML +=    `<div class="form-choice>
 										<label for="${word}">${word.slice(1, -1)}</label><br />
-										<input type="text" name="word" id="${word}">
-									</div>`
+										<input type="text" name="word" class="glad-word" id="${word}">
+									</div>`;
 	}
-	form.innerHTML += `<input type="submit" value="Get Glad!"></input>`
+	form.innerHTML += `<input type="submit" id="submit-story" value="Get Glad!"></input>`;
 	form.addEventListener("click", (event) => {
-		if (event.target.getAttribute('type') === 'submit') {
-			submitInfo()
+		if (event.target.id === 'submit-story') {
+			submitInfo();
 		}
 	});
 }
     
 function submitInfo() {
-	const fieldData = document.getElementsByTagName('input');
-	const storyWords = newStory.words
+	const fieldData = document.getElementsByClassName('glad-word');
+	const storyWords = newStory.words;
 	for (let num in storyWords) {
 		wordDic[storyWords[num]] = fieldData[num].value;
 	}
-	printStory()
+	printStory();
 }
 
 function printStory() {
 	const theStory = newStory.giveStory(wordDic);
 	mainBody.innerHTML = `<p class="glad-text">${theStory}</p>`;
+	mainBody.innerHTML += `<input id="play" value="Play Again?"></input>`;
 }

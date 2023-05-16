@@ -1,5 +1,5 @@
-import * as gladLibsFile from './modules/gladLibs.js'
-import * as hangManFile from './modules/hangman.js'
+import * as gladLibsFile from './modules/gladLibs.js';
+import * as hangManFile from './modules/hangedMen.js';
 
 let descriptions = '';
 
@@ -11,6 +11,14 @@ const mainBody = document.getElementById('body');
 const gameListHolder = document.getElementById('game-list');
 
 const gamesList = ['Glad Libs', 'Glad Scribe', 'Wheel of Hanged Men'];
+
+let playedGame = '';
+
+mainBody.addEventListener("click", (event) => {
+    if (event.target.id === "play") {
+        runGames(playedGame);
+    }
+});
 
 gameListHolder.addEventListener("click", (event) => {
     if (event.target.nodeName === "A") {
@@ -26,10 +34,10 @@ gameListHolder.addEventListener("click", (event) => {
             }
         } else if (mainBody.children.length > 0) {
             if (window.confirm("Do you want to play a different playing?")) {
-                printDesc(event.target.textContent)
+                printDesc(event.target.textContent);
             }
         } else {
-            printDesc(event.target.textContent)
+            printDesc(event.target.textContent);
         }
     }
 });
@@ -37,12 +45,8 @@ gameListHolder.addEventListener("click", (event) => {
 
 function printDesc(game) {
 	mainBody.innerHTML = `<p class="game-desc">${descriptions[0][`${game}`]}</p>`;
-	mainBody.innerHTML += `<input id="play" value="Play!"></input>`
-    mainBody.addEventListener("click", (event) => {
-        if (event.target.getAttribute('id') === "play") {
-            runGames(game)
-        }
-    });
+	mainBody.innerHTML += `<input id="play" value="Play!"></input>`;
+    playedGame = game;
 }
 
 function runGames(game) {
@@ -51,7 +55,6 @@ function runGames(game) {
             gladLibs();
             break;
         case 'Glad Scribe':
-            gladLibs();
             break;
         case 'Wheel of Hanged Men':
             hangedMen();

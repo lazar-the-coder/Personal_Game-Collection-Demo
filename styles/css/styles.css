@@ -433,3 +433,8 @@ li {
     flex: 1;
   }
 }
+
+span {
+  color: red;
+  font-family: 'Darumadrop One', cursive;
+}
