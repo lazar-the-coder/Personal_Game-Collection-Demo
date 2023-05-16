@@ -438,3 +438,15 @@ span {
   color: red;
   font-family: 'Darumadrop One', cursive;
 }
+
+#keys {
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  #keys {
+    display: flex;
+    justify-content: center;
+  }
+}

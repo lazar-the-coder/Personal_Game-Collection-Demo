@@ -6,7 +6,6 @@ fetch('../../data.json')
 
 const mainBody = document.getElementById('body');
 
-
 class StoryTemplate {
 	constructor (text, title) {
 		this.text = text;
@@ -59,7 +58,7 @@ function printForm() {
 										<input type="text" name="word" class="glad-word" id="${word}">
 									</div>`;
 	}
-	form.innerHTML += `<input type="submit" id="submit-story" value="Get Glad!"></input>`;
+	form.innerHTML += `<input type="submit" id="submit-story" value="Get Glad!">`;
 	form.addEventListener("click", (event) => {
 		if (event.target.id === 'submit-story') {
 			submitInfo();
@@ -79,5 +78,5 @@ function submitInfo() {
 function printStory() {
 	const theStory = newStory.giveStory(wordDic);
 	mainBody.innerHTML = `<p class="glad-text">${theStory}</p>`;
-	mainBody.innerHTML += `<input id="play" value="Play Again?"></input>`;
+	mainBody.innerHTML += `<input id="play" value="Play Again?">`;
 }
