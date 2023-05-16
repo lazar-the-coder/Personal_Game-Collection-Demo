@@ -49,7 +49,7 @@ export function selector() {
 }
 
 function printForm() {
-	mainBody.innerHTML = '<form><div class="form-options"></div></form>';
+	mainBody.innerHTML = '<form><p>Verbs are past tense by default</p><div class="form-options"></div></form>';
 	const form = document.getElementsByTagName('form')[0];
 	const formoptions = document.getElementsByClassName('form-options')[0];
 	for (let word of newStory.words) {
@@ -69,13 +69,13 @@ function printForm() {
 function submitInfo() {
 	const fieldData = document.getElementsByTagName('input');
 	const storyWords = newStory.words
-	for (let i = 0; i < storyWords.length; i++) {
-		wordDic[storyWords[i]] = fieldData[i].value;
+	for (let num in storyWords) {
+		wordDic[storyWords[num]] = fieldData[num].value;
 	}
 	printStory()
 }
 
 function printStory() {
 	const theStory = newStory.giveStory(wordDic);
-	mainBody.innerHTML = `<p>${theStory}</p>`;
+	mainBody.innerHTML = `<p class="glad-text">${theStory}</p>`;
 }

@@ -9,12 +9,12 @@
 	
 	"gladStories": [
 		{
-			"title": "lets", 
-			"text": "let's $%Word 1$"
+			"title": "Shall We?", 
+			"text": "It was a $%Adjective1$ $%Time of Day1$ in Sodor, and $%Proper Noun1$ was drinking $%Fluid1$ while listening to $%Song1$. Suddenly, a $%Adjective2$ $%Person Noun1$ $%Movement Verb1$ into the field, they spoke $%Adverb1$ yet $%Adverb2$. $%Proper Noun1$ couldn’t believe his eyes, falling onto his $%Body Part1$. The $%Person Noun1$ $%Verb1$ before him, then said in a $%Adjective3$ tone 'Shall we $%Verb (Present)1$?'"
 		},
 		{
-			"title": "let us",
-			"text": "let us $%Word 1$"
+			"title": "They are the One",
+			"text": "There is a $%Adjective1$ prophesy from the far off land of $%Place1$ from the ancient time of $%Time1$. It speaks of a $%Person Noun1$ who will call to the $%Plural Noun1$ of $%Place1$ and $%Verb (Present)1$ them and unite them under the banner of $%Goal1$. They’re name is $%Proper Noun1$, and they are the $%Verb (Present)1$er of the $%Plural Noun1$ of $%Place1$."
 		}
     ],
 	

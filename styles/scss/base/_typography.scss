@@ -34,5 +34,11 @@ main {
 
 .wrapper {
     width: 90%;
+    flex: 1;
+    margin: auto;
+}
+
+.game-desc {
+    text-align: center;
     margin: auto;
 }
