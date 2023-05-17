@@ -376,7 +376,7 @@ main {
   margin: auto;
 }
 
-.game-desc {
+#game-desc {
   text-align: center;
   margin: auto;
 }
@@ -410,21 +410,16 @@ li {
   margin: auto;
 }
 
-.form-options {
+#form-options {
   padding: 0;
   margin: 0;
 }
 
 @media (min-width: 768px) {
-  .form-options {
+  #form-options {
     display: flex;
-    justify-content: space-around;
-  }
-}
-
-@media (min-width: 768px) {
-  .form-options {
     flex-wrap: wrap;
+    justify-content: space-around;
   }
 }
 

@@ -12,7 +12,15 @@ const gameListHolder = document.getElementById('game-list');
 
 const gamesList = ['Glad Libs', 'Glad Scribe', 'Wheel of Hanged Men'];
 
+const idsAndClassesFor = {
+    'playGame': 'play',
+    'showButton': 'toggle-games',
+    'gameDesc': 'game-desc'
+};
+
 let playedGame = '';
+
+startGameBar();
 
 mainBody.addEventListener("click", (event) => {
     if (event.target.id === "play") {
@@ -22,15 +30,14 @@ mainBody.addEventListener("click", (event) => {
 
 gameListHolder.addEventListener("click", (event) => {
     if (event.target.nodeName === "A") {
-        if (event.target.id === "show-games") {
+        if (event.target.id === idsAndClassesFor['showButton']) {
             if (event.target.textContent === "Show All") {
                 event.target.textContent = "Hide All";
                 for (let game of gamesList) {
                     gameListHolder.innerHTML += (`<li><a>${game}</a></li>`);
                 }
             } else if (event.target.textContent === "Hide All") {
-                gameListHolder.innerHTML = '';
-                gameListHolder.innerHTML += (`<li><a id="show-games">Show All</a></li>`);
+                startGameBar();
             }
         } else if (mainBody.children.length > 0) {
             if (window.confirm("Do you want to play a different playing?")) {
@@ -42,10 +49,13 @@ gameListHolder.addEventListener("click", (event) => {
     }
 });
 
+function startGameBar(){
+    gameListHolder.innerHTML = (`<li><a id=${idsAndClassesFor['showButton']}>Show All</a></li>`);
+}
 
 function printDesc(game) {
-	mainBody.innerHTML = `<p class="game-desc">${descriptions[0][`${game}`]}</p>`;
-	mainBody.innerHTML += `<input id="play" value="Play!"></input>`;
+	mainBody.innerHTML = `<p id=${idsAndClassesFor['gameDesc']}>${descriptions[0][`${game}`]}</p>`
+	mainBody.innerHTML += `<button id=${idsAndClassesFor['playGame']}>Play!</button>`
     playedGame = game;
 }
 
