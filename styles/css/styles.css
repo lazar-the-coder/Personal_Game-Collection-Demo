@@ -434,13 +434,13 @@ span {
   font-family: 'Darumadrop One', cursive;
 }
 
-#keys {
+#letter-keys {
   padding: 0;
   margin: 0;
 }
 
 @media (min-width: 768px) {
-  #keys {
+  #letter-keys {
     display: flex;
     justify-content: center;
   }
