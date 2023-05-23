@@ -1,5 +1,8 @@
 import * as gladLibsFile from './modules/gladLibs.js';
-import * as hangManFile from './modules/hangedMen.js';
+import * as gladScribeFile from './modules/gladScribe.js';
+import * as hangedManFile from './modules/hangedMen.js';
+import * as shipBattleFile from './modules/shipBattle.js';
+
 
 let descriptions = '';
 
@@ -10,7 +13,7 @@ fetch('../../data.json')
 const mainBody = document.getElementById('body');
 const gameListHolder = document.getElementById('game-list');
 
-const gamesList = ['Glad Libs', 'Glad Scribe', 'Wheel of Hanged Men'];
+const gamesList = ['Glad Libs', 'Glad Scribe', 'Wheel of Hanged Men', 'Ship Battle', 'Star Ship Battle', '3 in a Row', '3D 3 in a Row'];
 
 const idsAndClassesFor = {
     'playGame': 'play',
@@ -65,25 +68,41 @@ function runGames(game) {
             gladLibs();
             break;
         case 'Glad Scribe':
+            gladScribe();
             break;
         case 'Wheel of Hanged Men':
             hangedMen();
+            break;
+        case 'Ship Battle':
+            shipBattle();
+            break;
+        case 'Star Ship Battle':
+            break;
+        case '3 in a Row':
+            break;
+        case '3D 3 in a Row':
             break;
         default:
             break;
     }
 }
 
-// Glad Libs
 function gladLibs() {
 
-    gladLibsFile.selector()
+    gladLibsFile.start()
 }
 
-// Hang Man
+function gladScribe() {
+
+    gladScribeFile.start()
+}
+
 function hangedMen() {
 
-    hangManFile.start()
+    hangedManFile.start()
 }
 
-// Tic Tac Toe
+function shipBattle() {
+
+    shipBattleFile.start()
+}

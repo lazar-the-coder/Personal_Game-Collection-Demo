@@ -5,3 +5,44 @@
         @content;
     }
 }
+
+@mixin color-match($type) {
+    @if $type == 'link' {
+        color: $third-color;
+        background-color: $fourth-color;
+        border: 2px $second-color solid;
+        font-family: 'Yeseva One', cursive;
+        &:hover{
+            background-color: $fifth-color;
+        }
+        @content;
+    } @else if $type == 'button' {
+        color: $second-color;
+        background-color: $first-color;
+        border: 2px $third-color dashed;
+        font-family: 'Darumadrop One', cursive;
+        font-size: 1.2em;
+        transition: transform 0.1s;
+        &:hover{
+            background-color: $fifth-color;
+            transform: rotate(-5deg);
+        }
+        @content;
+    } @else if $type == 'back' {
+        color: $fifth-color;
+        background-color: $first-color;
+        font-family: 'Nova Oval', cursive;
+        @content;
+    } @else if $type == 'snip' {
+        color: $second-color;
+        font-family: 'Darumadrop One', cursive;
+        font-size: 1.2em;
+        @content;
+    } @else if $type == 'main' {
+        color: $text-color;
+        background-color: white;
+        font-family: 'Nova Oval', cursive;
+        font-size: 1.1rem;
+        @content;
+    }
+}

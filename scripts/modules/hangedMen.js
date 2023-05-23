@@ -31,7 +31,6 @@ class Phrase {
 
 let phrase = '';
 let rightGuessArray = [];
-let wrongGuessArray = [];
 const livesAmount = 8;
 let lives = 0;
 
@@ -41,7 +40,7 @@ export function start() {
 	rightGuessArray = [];
 	wrongGuessArray = [];
 	lives = livesAmount;
-	mainBody.innerHTML = `<p id=${idsAndClassesFor['lives']}>${lives}</p><div id=${idsAndClassesFor['display']}></div><div id=${idsAndClassesFor['keys']}></div>`;
+	mainBody.innerHTML = `<p id=${idsAndClassesFor['lives']}>${lives}</p><section id=${idsAndClassesFor['display']}></section><section id=${idsAndClassesFor['keys']}></section>`;
 	const letterKeys = document.getElementById(idsAndClassesFor['keys']);
 	for (let letter of alphabet) {
 		letterKeys.innerHTML += (`<button class=${idsAndClassesFor['letterKey']}>${letter}</button>`);
@@ -84,9 +83,7 @@ function printPhrase() {
 
 function checkLetter(letter) {
 	if (phrase.letterList.includes(letter)) {
-		if ((rightGuessArray.includes(letter))) {
-			console.log('already in');
-		} else {
+		if (!(rightGuessArray.includes(letter))) {
 			rightGuessArray.push(letter);
 			const letters = document.getElementsByClassName(idsAndClassesFor['letter']);
 			for (let letterCont of letters) {
@@ -128,9 +125,7 @@ function checkLives() {
 }
 
 function endGame(end) {
-	const display = document.getElementById(idsAndClassesFor['display']);
-	const letterKeys = document.getElementById(idsAndClassesFor['keys']);
-	display.innerHTML = `<p>You ${end}</p>`;
-	letterKeys.innerHTML = `<button id=${idsAndClassesFor['playGame']}>Play Again!</button>`;
+	mainBody.innerHTML = `<p>You ${end}</p><br /><p><span>${phrase.spacedPhrase}</span></p>`;
+	mainBody.innerHTML += `<button id=${idsAndClassesFor['playGame']}>Play Again!</button>`;
 }
 

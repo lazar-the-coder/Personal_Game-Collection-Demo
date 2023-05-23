@@ -42,7 +42,7 @@ class StoryTemplate {
 let newStory;
 let wordDic = {};
 
-export function selector() {
+export function start() {
 	wordDic = {};
 	mainBody.innerHTML = '';
 	const storyoptions = document.createElement('div');
@@ -69,10 +69,10 @@ function printForm() {
 	form.append(formoptions);
 	mainBody.append(form);
 	for (let word of newStory.words) {
-		formoptions.innerHTML +=    `<div class=${idsAndClassesFor['formOption']}>
+		formoptions.innerHTML +=    `<section class=${idsAndClassesFor['formOption']}>
 										<label for="${word}">${word.slice(1, -1)}</label><br />
-										<input type="text" name="word" class=${idsAndClassesFor['gladWord']} id="${word}">
-									</div>`;
+										<input type="text" name="word" class=${idsAndClassesFor['gladWord']} id=${word}>
+									</section>`;
 	}
 	form.innerHTML += `<input type="submit" id=${idsAndClassesFor['submitStory']} value="Get Glad!">`;
 	form.addEventListener("click", (event) => {
@@ -95,5 +95,4 @@ function printStory() {
 	const theStory = newStory.giveStory(wordDic);
 	mainBody.innerHTML = `<p id=${idsAndClassesFor['game-text']}>${theStory}</p>`;
 	mainBody.innerHTML += `<button id=${idsAndClassesFor['playGame']}>Play Again!</button>`;
-	mainBody.append(playButton);
 }

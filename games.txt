@@ -1,11 +1,11 @@
-Wheel of Hanged Men: https://en.wikipedia.org/wiki/Hangman_(game) https://en.wikipedia.org/wiki/Wheel_of_Fortune_(American_game_show)
-
 Tic-Tac-Toe: https://en.wikipedia.org/wiki/Tic-tac-toe
 3d Tic-Tac-Toe: https://en.wikipedia.org/wiki/3D_tic-tac-toe
-Battkeship Solitaire: https://en.wikipedia.org/wiki/Battleship_(game) https://en.wikipedia.org/wiki/Battleship_(puzzle)
-Boggle: https://en.wikipedia.org/wiki/Boggle
 Pigs and Cows: https://en.wikipedia.org/wiki/Bulls_and_Cows
-
+Battkeship: https://en.wikipedia.org/wiki/Battleship_(game)
+https://en.wikipedia.org/wiki/Battleship_(puzzle)
+Pachisi: https://en.wikipedia.org/wiki/Pachisi
+https://en.wikipedia.org/wiki/Parcheesi
+https://en.wikipedia.org/wiki/Sorry!_(game)
 
 Quicc Maths Game: You have to quickly answer math questions
 Line By Line Writing: Each person adds one sentence to a story one by one.

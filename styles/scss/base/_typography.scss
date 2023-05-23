@@ -7,38 +7,35 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: 'Yeseva One', cursive;
-}
-
-a {
-    text-decoration: none;
-    color: $second-text-color;
-    display: block;
-    padding: auto;
-}
-
-header, footer {
-    overflow: auto;
-    text-align: center;
-    color: $first-text-color;
-    background-color: $first-color;
-    flex-grow: 0;
-    flex-shrink: 0;
-    font-family: 'Nova Oval', cursive;
 }
 
 main {
     flex-grow: 1;
-    color: $third-text-color;
+    @include color-match('main') {}
+}
+
+input {
+    @include color-match('snip') {}
+}
+
+button, input:not([type='text']) {
+    display: block;
+    padding: 0.1em 0.4em;
+    margin: 1em auto;
+    @include color-match('button') {}
+}
+
+span {
+    @include color-match('snip') {}
+}
+
+li {
+    list-style-type: none;
+    flex-grow: 1;
 }
 
 .wrapper {
     width: 90%;
     flex: 1;
-    margin: auto;
-}
-
-#game-desc {
-    text-align: center;
     margin: auto;
 }

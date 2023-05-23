@@ -1,12 +1,11 @@
 {
-	
 	"descriptions": [
 		{
-			"Glad Libs": "You choose a word when prompted, and they will be added into the story.",
+			"Glad Libs": "You fill out a list of words by type, then the words will be added into the story.",
+			"Glad Scribe": "You choose a word type when prompted, then when given a word of that type, write a sentence with it. You do this 7 more times to make a story.",
 			"Wheel of Hanged Men": "You can either choose to guess a letter or the phrase, fail too many times and you lose. You can trade a hint for a life."
 		}
     ],
-	
 	"gladStories": [
 		{
 			"title": "Shall We?", 
@@ -17,12 +16,20 @@
 			"text": "There is a $%Adjective1$ prophesy from the far off land of $%Place1$ from the ancient time of $%Time1$. It speaks of a $%Person Noun1$ who will call to the $%Plural Noun1$ of $%Place1$ and $%Verb (Present)1$ them and unite them under the banner of $%Goal1$. They’re name is $%Proper Noun1$, and they are the $%Verb (Present)1$er of the $%Plural Noun1$ of $%Place1$."
 		}
     ],
-	
 	"hangingPhrases": [
-		"the one",
-		"the two",
-		"the three",
-		"the four",
-		"the five"
-    ]
+		"he is the one",
+		"two is company",
+		"three is a crowd",
+		"four score and seven years ago",
+		"i plea the fifth"
+    ],
+	"gladWords": [
+		{
+			"noun": ["dog", "map", "tongue", "chair", "road", "union", "tension", "energy"],
+			"verb": ["mark", "get", "believe", "yield", "seek", "go", "occur", "blow"],
+			"adjective": ["done", "lone", "happy", "short", "flexible", "quirky", "cold", "functional"],
+			"adverb": ["quickly", "properly", "mysteriously", "quite", "very", "willingly", "dashingly", "slowly"],
+			"other": ["the", "in", "but", "they", "darn", "over", "for", "because"]
+		}
+	]
 }

@@ -1,11 +1,15 @@
 @import '../utility/index';
 
-#play {
-    display: block;
+/*All*/
+
+#game-desc {
+    text-align: center;
     margin: auto;
 }
 
-#form-options {
+/*Glad Libs*/
+
+#story-options, #form-options {
     padding: 0;
     margin: 0;
     @include media-query('md') {
@@ -13,47 +17,62 @@
         flex-wrap: wrap;
         justify-content: space-around;
     }
+    & > li {
+        flex: 1 1 25%;
+        @include color-match('button') {}
+    }
 }
 
 .form-choice {
+    margin: 0.4em;
     @include media-query('md') {
         flex: 1;
     }
 }
 
-span {
-    color: red;
-    font-family: 'Darumadrop One', cursive;
+/*Glad Scribe*/
+
+.word-type-choice {
+    margin: 0.1em auto;
+    
+}
+
+/*Wheel of Hanged Men*/
+
+
+
+#phrase-display {
+    direction: row;
+    align-content: center; 
+}
+
+.letter-print {
+    display: inline-block;
+    margin: 0.2em;
+    & >  p {
+        width: 20px;
+        height: 20px;
+        display: none;
+    }
+}
+
+.shown p {
+    display: block;
+    @include color-match('snip') {}
 }
 
 #letter-keys {
     padding: 0;
     margin: 0;
-    @include media-query('md') {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-#phrase-display {
-    @include media-query('md') {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .letter {
-    width: 20px;
-    height: 20px;
-}
-
-.letter-print p {
-    width: 20px;
-    height: 20px;
-    display: none
-}
-
-.shown p {
-    display: block;
+    width: 36px;
+    height: 36px;
+    &:disabled {
+        background-color: $fourth-color;
+    }
 }

@@ -1,19 +1,26 @@
 @import '../utility/index';
 
-ul {
-    padding: 0;
-    margin: 0;
-    @include media-query('md') {
-        display: flex;
-        justify-content: space-around;
+header, footer {
+    overflow: auto;
+    text-align: center;
+    flex: 0 0;
+    @include color-match('back') {}
+    h1 {
+        text-shadow: 5px 5px 4px $second-color;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        @include media-query('md') {
+            display: flex;
+            justify-content: space-around;
+        }
     }
 }
 
-li {
-    list-style-type: none; 
-    text-align: center;
-    border: 2px $second-color solid;
-    @include media-query('md') {
-        flex-grow: 1;
-    }
+a {
+    text-decoration: none;
+    display: block;
+    padding: auto;
+    @include color-match('link') {}
 }

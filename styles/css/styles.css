@@ -345,29 +345,48 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Yeseva One', cursive;
-}
-
-a {
-  text-decoration: none;
-  color: #0412e3;
-  display: block;
-  padding: auto;
-}
-
-header, footer {
-  overflow: auto;
-  text-align: center;
-  color: #31a4d2;
-  background-color: #e4a085;
-  flex-grow: 0;
-  flex-shrink: 0;
-  font-family: 'Nova Oval', cursive;
 }
 
 main {
   flex-grow: 1;
-  color: #444;
+  color: #353535;
+  background-color: white;
+  font-family: 'Nova Oval', cursive;
+  font-size: 1.1rem;
+}
+
+input {
+  color: #ce3c3c;
+  font-family: 'Darumadrop One', cursive;
+  font-size: 1.2em;
+}
+
+button, input:not([type='text']) {
+  display: block;
+  padding: 0.1em 0.4em;
+  margin: 1em auto;
+  color: #ce3c3c;
+  background-color: #8e9fee;
+  border: 2px #a200d3 dashed;
+  font-family: 'Darumadrop One', cursive;
+  font-size: 1.2em;
+  transition: transform 0.1s;
+}
+
+button:hover, input:not([type='text']):hover {
+  background-color: #ffd900;
+  transform: rotate(-5deg);
+}
+
+span {
+  color: #ce3c3c;
+  font-family: 'Darumadrop One', cursive;
+  font-size: 1.2em;
+}
+
+li {
+  list-style-type: none;
+  flex-grow: 1;
 }
 
 .wrapper {
@@ -376,51 +395,82 @@ main {
   margin: auto;
 }
 
+header, footer {
+  overflow: auto;
+  text-align: center;
+  flex: 0 0;
+  color: #ffd900;
+  background-color: #8e9fee;
+  font-family: 'Nova Oval', cursive;
+}
+
+header h1, footer h1 {
+  text-shadow: 5px 5px 4px #ce3c3c;
+}
+
+header ul, footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  header ul, footer ul {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  padding: auto;
+  color: #a200d3;
+  background-color: #8bcf9a;
+  border: 2px #ce3c3c solid;
+  font-family: 'Yeseva One', cursive;
+}
+
+a:hover {
+  background-color: #ffd900;
+}
+
+/*All*/
 #game-desc {
   text-align: center;
   margin: auto;
 }
 
-ul {
+/*Glad Libs*/
+#story-options, #form-options {
   padding: 0;
   margin: 0;
 }
 
 @media (min-width: 768px) {
-  ul {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
-li {
-  list-style-type: none;
-  text-align: center;
-  border: 2px #fcf151 solid;
-}
-
-@media (min-width: 768px) {
-  li {
-    flex-grow: 1;
-  }
-}
-
-#play {
-  display: block;
-  margin: auto;
-}
-
-#form-options {
-  padding: 0;
-  margin: 0;
-}
-
-@media (min-width: 768px) {
-  #form-options {
+  #story-options, #form-options {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
+}
+
+#story-options > li, #form-options > li {
+  flex: 1 1 25%;
+  color: #ce3c3c;
+  background-color: #8e9fee;
+  border: 2px #a200d3 dashed;
+  font-family: 'Darumadrop One', cursive;
+  font-size: 1.2em;
+  transition: transform 0.1s;
+}
+
+#story-options > li:hover, #form-options > li:hover {
+  background-color: #ffd900;
+  transform: rotate(-5deg);
+}
+
+.form-choice {
+  margin: 0.4em;
 }
 
 @media (min-width: 768px) {
@@ -429,37 +479,23 @@ li {
   }
 }
 
-span {
-  color: red;
-  font-family: 'Darumadrop One', cursive;
+/*Glad Scribe*/
+.word-type-choice {
+  margin: 0.1em auto;
 }
 
-#letter-keys {
-  padding: 0;
-  margin: 0;
+/*Wheel of Hanged Men*/
+#phrase-display {
+  direction: row;
+  align-content: center;
 }
 
-@media (min-width: 768px) {
-  #letter-keys {
-    display: flex;
-    justify-content: center;
-  }
+.letter-print {
+  display: inline-block;
+  margin: 0.2em;
 }
 
-@media (min-width: 768px) {
-  #phrase-display {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-
-.letter {
-  width: 20px;
-  height: 20px;
-}
-
-.letter-print p {
+.letter-print > p {
   width: 20px;
   height: 20px;
   display: none;
@@ -467,4 +503,24 @@ span {
 
 .shown p {
   display: block;
+  color: #ce3c3c;
+  font-family: 'Darumadrop One', cursive;
+  font-size: 1.2em;
+}
+
+#letter-keys {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.letter {
+  width: 36px;
+  height: 36px;
+}
+
+.letter:disabled {
+  background-color: #8bcf9a;
 }
