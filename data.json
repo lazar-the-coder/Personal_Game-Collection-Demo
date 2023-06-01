@@ -3,7 +3,8 @@
 		{
 			"Glad Libs": "You fill out a list of words by type, then the words will be added into the story.",
 			"Glad Scribe": "You choose a word type when prompted, then when given a word of that type, write a sentence with it. You do this 7 more times to make a story.",
-			"Wheel of Hanged Men": "You can either choose to guess a letter or the phrase, fail too many times and you lose. You can trade a hint for a life."
+			"Wheel of Hanged Men": "You can either choose to guess a letter or the phrase, fail too many times and you lose. You can trade a hint for a life.",
+			"Ship Battle": "You are trying to sink all of the enemies ships. Find and destroy all the ships on the grid. You have a limited number of Torpedoes."
 		}
     ],
 	"gladStories": [
@@ -30,6 +31,15 @@
 			"adjective": ["done", "lone", "happy", "short", "flexible", "quirky", "cold", "functional"],
 			"adverb": ["quickly", "properly", "mysteriously", "quite", "very", "willingly", "dashingly", "slowly"],
 			"other": ["the", "in", "but", "they", "darn", "over", "for", "because"]
+		}
+	],
+	"ships2D": [
+		{
+			"Carrier": [1, 2, 3],
+			"Frigate": [1, 1, 4],
+			"Cruiser": [3, 1, 3],
+			"Destroyer": [4, 1, 2],
+			"Submarine": [4, 1, 1]
 		}
 	]
 }

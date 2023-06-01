@@ -4,9 +4,6 @@ fetch('../../data.json')
 	.then(response => response.json())
 	.then(obj => hangingPhrases = obj['hangingPhrases']);
 
-const mainBody = document.getElementById('body');
-const alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
-
 const idsAndClassesFor = {
     'playGame': 'play',
 	'display': 'phrase-display',
@@ -19,6 +16,9 @@ const idsAndClassesFor = {
 	'shown': 'shown',
 	'hintBtn': 'hint-btn'
 };
+
+const mainBody = document.getElementById('body');
+const alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
 
 class Phrase {
 	constructor (phrase) {
@@ -38,7 +38,6 @@ export function start() {
 	let newPhrase = hangingPhrases[Math.floor(Math.random() * hangingPhrases.length)];
 	phrase = new Phrase(newPhrase);
 	rightGuessArray = [];
-	wrongGuessArray = [];
 	lives = livesAmount;
 	mainBody.innerHTML = `<p id=${idsAndClassesFor['lives']}>${lives}</p><section id=${idsAndClassesFor['display']}></section><section id=${idsAndClassesFor['keys']}></section>`;
 	const letterKeys = document.getElementById(idsAndClassesFor['keys']);

@@ -524,3 +524,37 @@ a:hover {
 .letter:disabled {
   background-color: #8bcf9a;
 }
+
+/*Ship Battle*/
+#grid-display {
+  margin: 1em auto;
+  display: grid;
+  height: 25em;
+  width: 25em;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+#grid-display button {
+  margin: 0;
+}
+
+#grid-display button span {
+  display: none;
+}
+
+#grid-display button:hover span {
+  display: contents;
+}
+
+#targeting-input div {
+  margin: 0.4em auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0;
+}
+
+#targeting-input div button {
+  margin: auto 0.4em;
+}

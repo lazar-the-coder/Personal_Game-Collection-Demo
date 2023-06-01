@@ -9,3 +9,11 @@ https://en.wikipedia.org/wiki/Sorry!_(game)
 
 Quicc Maths Game: You have to quickly answer math questions
 Line By Line Writing: Each person adds one sentence to a story one by one.
+
+1 2x3 Carrier
+1 1x4 Frigate
+3 1x3 Cruisers
+4 1x2 Destroyers
+4 1x1 Submarines
+
+one battleship four squares long, two cruisers three squares long, three destroyers two squares long, and four submarines one square in size.

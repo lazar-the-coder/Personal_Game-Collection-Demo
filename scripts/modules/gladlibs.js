@@ -4,8 +4,6 @@ fetch('../../data.json')
 	.then(response => response.json())
 	.then(obj => gladStories = obj['gladStories']);
 
-const mainBody = document.getElementById('body');
-
 const idsAndClassesFor = {
     'playGame': 'play',
     'gameText': 'game-text',
@@ -15,6 +13,8 @@ const idsAndClassesFor = {
 	'gladWord': 'glad-word',
 	'submitStory': 'submit-story'
 };
+
+const mainBody = document.getElementById('body');
 
 class StoryTemplate {
 	constructor (text, title) {

@@ -39,8 +39,6 @@
 
 /*Wheel of Hanged Men*/
 
-
-
 #phrase-display {
     direction: row;
     align-content: center; 
@@ -74,5 +72,37 @@
     height: 36px;
     &:disabled {
         background-color: $fourth-color;
+    }
+}
+
+/*Ship Battle*/
+
+
+#grid-display {
+    margin: 1em auto;
+    display: grid;
+    height: 25em;
+    width: 25em;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    & button {
+        margin: 0;
+        & span {
+            display: none;
+        }
+        &:hover span {
+            display: contents;
+        }
+    }
+}
+
+#targeting-input div {
+    margin: 0.4em auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+    & button {
+        margin: auto 0.4em;
     }
 }
